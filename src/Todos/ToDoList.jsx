@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleTodoAction, deleteTodoAction } from './store/reducer'
+import { toggleTodoAction, deleteTodoAction } from './store/todoReducer'
 
 const TodoList = () => {
 
@@ -15,25 +15,22 @@ const TodoList = () => {
             )}
             {todos &&
             todos.map(todo => ( /* map은 for each와 같다 */
-                <div key={todo.id} className="row mb-1">
-                    <div className="col-sm-2">
+                <div key = {todo.id} className="row mb-1">
+                    <div className = "col-sm-2">
                         <input
-                            type="checkbox"
-                            checked={todo.complete}
-                            onChange={toggleTodo.bind(null, todo.todoId)}
+                            type = "checkbox"
+                            checked = {todo.complete}
+                            onChange = {toggleTodo.bind(null, todo.todoId)}
                         />
-                    </div>
-                    <div className="col-sm-8">
-                        <span>{todo.name}</span>
-                    </div>
-                    <div className="col-sm-2">
+                        <span style = {{margin: '20px'}}>{todo.name}</span>
                         <button
-                            className="btn btn-danger"
-                            onClick={deleteTodo.bind(null, todo.todoId)}
+                            className = "btn btn-danger"
+                            onClick = {deleteTodo.bind(null, todo.todoId)}
                         >
                             X
                         </button>
                     </div>
+
                 </div>
             ))}
         </div>

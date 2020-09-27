@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Todos from './Todos/TodoInput'
+import { Provider } from 'react-redux'
+import TodoInput from './todos/TodoInput'
+import TodoList from './todos/TodoList'
+import store from './todos/store'
 
 const App = () => {
   return <>
-    <Todos/>
+    <Provider store = { store }>
+    <TodoInput/><br/><TodoList/>
+    </Provider>
   </>
 }
 

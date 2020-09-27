@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import uuid from 'uuid/v4'
 import { useDispatch } from 'react-redux'
+import { addTodoAction } from './store/todoReducer'
 
 const TodoInput = () => {
     const [todo, setTodo] = useState('')
@@ -17,7 +18,7 @@ const TodoInput = () => {
     }
     const handleChange = e => {
         e.preventDefault()
-        alert(e.target.value)
+        setTodo(e.target.value)
     }
     const addTodo = todo => {
         dispatch(addTodoAction(todo)) /* 임시 저장소*/

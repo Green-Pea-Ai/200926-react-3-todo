@@ -11,7 +11,7 @@ export const toggleTodoAction = todoId => ({
     payload: todoId
 })
 const initialState = {todos: []} /* JSON이 두개({}, []), 배열로써 다룬다, 편의상 배열이라 부른다 */
-const reducer = (state = initialState) => {
+const todoReducer = (state = initialState, action) => {
     switch(action.type){
         case "ADD_TODO":
             return {...state, todos: [...state.todos, action.payload]}
@@ -28,4 +28,4 @@ const reducer = (state = initialState) => {
 }
 
 
-export default reducer
+export default todoReducer
